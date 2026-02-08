@@ -30,6 +30,11 @@ body {
     background-color: var(--bg-darker) !important;
 }
 
+.mb-8 {
+    font-family: 'Courier New', Courier, monospace;
+    
+}
+
 .py-6 {
     padding-top: 6rem;
     padding-bottom: 6rem;
@@ -98,6 +103,12 @@ body {
 .nav-link {
     position: relative;
     transition: color 0.3s ease;
+}
+
+.robot-3d {
+    position: absolute;
+    top: 0;
+    right: -25%
 }
 
 .nav-link::after {
@@ -299,6 +310,7 @@ body {
     background-color: var(--accent-color) !important;
     transform: translateY(-5px) scale(1.1);
     box-shadow: 0 5px 15px rgba(0, 123, 255, 0.4);
+    transition: 0.3s;
 }
 
 /* Social Icons */
@@ -373,6 +385,8 @@ body {
 ::-webkit-scrollbar-thumb:hover {
     background: linear-gradient(180deg, var(--accent-hover), var(--accent-color));
 }
+
+
 
 /* Responsive Animations */
 @media (max-width: 768px) {
