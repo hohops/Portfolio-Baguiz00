@@ -1,4 +1,109 @@
 /* Variables */
+@font-face {
+    font-family: 'bbtorsospro';
+    src: url('fonts/bbtorsospro-hairline.otf') format('opentype');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'bbtorsospro';
+    src: url('fonts/bbtorsospro-thin.otf') format('opentype');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'bbtorsospro';
+    src: url('fonts/bbtorsospro-semithin.otf') format('opentype');
+    font-weight: 250;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'bbtorsospro';
+    src: url('fonts/bbtorsospro-light.otf') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'bbtorsospro';
+    src: url('fonts/bbtorsospro-semilight.otf') format('opentype');
+    font-weight: 350;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'bbtorsospro';
+    src: url('fonts/bbtorsospro-regular.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'bbtorsospro';
+    src: url('fonts/bbtorsospro-semiregular.otf') format('opentype');
+    font-weight: 450;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'bbtorsospro';
+    src: url('fonts/bbtorsospro-semimedium.otf') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'bbtorsospro';
+    src: url('fonts/bbtorsospro-medium.otf') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'bbtorsospro';
+    src: url('fonts/bbtorsospro-semibold.otf') format('opentype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'bbtorsospro';
+    src: url('fonts/bbtorsospro-bold.otf') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'bbtorsospro';
+    src: url('fonts/bbtorsospro-semiultra.otf') format('opentype');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'bbtorsospro';
+    src: url('fonts/bbtorsospro-ultra.otf') format('opentype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+/* Variant family aliases (optional names per weight) */
+@font-face { font-family: 'bbtorsospro-hairline'; src: url('fonts/bbtorsospro-hairline.otf') format('opentype'); font-weight: 100; font-style: normal; font-display: swap; }
+@font-face { font-family: 'bbtorsospro-thin'; src: url('fonts/bbtorsospro-thin.otf') format('opentype'); font-weight: 200; font-style: normal; font-display: swap; }
+@font-face { font-family: 'bbtorsospro-semithin'; src: url('fonts/bbtorsospro-semithin.otf') format('opentype'); font-weight: 250; font-style: normal; font-display: swap; }
+@font-face { font-family: 'bbtorsospro-light'; src: url('fonts/bbtorsospro-light.otf') format('opentype'); font-weight: 300; font-style: normal; font-display: swap; }
+@font-face { font-family: 'bbtorsospro-semilight'; src: url('fonts/bbtorsospro-semilight.otf') format('opentype'); font-weight: 350; font-style: normal; font-display: swap; }
+@font-face { font-family: 'bbtorsospro-regular'; src: url('fonts/bbtorsospro-regular.otf') format('opentype'); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: 'bbtorsospro-semiregular'; src: url('fonts/bbtorsospro-semiregular.otf') format('opentype'); font-weight: 450; font-style: normal; font-display: swap; }
+@font-face { font-family: 'bbtorsospro-semimedium'; src: url('fonts/bbtorsospro-semimedium.otf') format('opentype'); font-weight: 500; font-style: normal; font-display: swap; }
+@font-face { font-family: 'bbtorsospro-medium'; src: url('fonts/bbtorsospro-medium.otf') format('opentype'); font-weight: 500; font-style: normal; font-display: swap; }
+@font-face { font-family: 'bbtorsospro-semibold'; src: url('fonts/bbtorsospro-semibold.otf') format('opentype'); font-weight: 600; font-style: normal; font-display: swap; }
+@font-face { font-family: 'bbtorsospro-bold'; src: url('fonts/bbtorsospro-bold.otf') format('opentype'); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: 'bbtorsospro-semiultra'; src: url('fonts/bbtorsospro-semiultra.otf') format('opentype'); font-weight: 800; font-style: normal; font-display: swap; }
+@font-face { font-family: 'bbtorsospro-ultra'; src: url('fonts/bbtorsospro-ultra.otf') format('opentype'); font-weight: 900; font-style: normal; font-display: swap; }
 :root {
     --bg-color: #121212;
     --bg-darker: #0a0a0a;
@@ -31,8 +136,7 @@ body {
 }
 
 .mb-8 {
-    font-family: 'Courier New', Courier, monospace;
-    
+    font-family: 'bbtorsospro', sans-serif;
 }
 
 .py-6 {
@@ -42,6 +146,15 @@ body {
 
 .letter-spacing-2 {
     letter-spacing: 2px;
+}
+
+.Hero-Title {
+    font-family: "bbtorsospro", sans-serif;
+    color: #ffffff;
+    font-size: 6rem;
+    font-weight: 500;   /* must match the font-face weight */
+    letter-spacing: -2px;
+
 }
 
 /* Loading Screen */
