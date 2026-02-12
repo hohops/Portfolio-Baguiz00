@@ -152,7 +152,7 @@ body {
     font-family: "bbtorsospro", sans-serif;
     color: #ffffff;
     font-size: 6rem;
-    font-weight: 500;   /* must match the font-face weight */
+    font-weight: 700;   /* must match the font-face weight */
     letter-spacing: -2px;
 
 }
@@ -191,7 +191,7 @@ body {
     top: 0;
     left: 0;
     height: 3px;
-    background: linear-gradient(90deg, var(--accent-color), #00d4ff);
+    background: linear-gradient(90deg, #007bff, #38acc4);
     z-index: 9998;
     transition: width 0.1s ease;
 }
@@ -204,9 +204,13 @@ body {
     transition: all 0.3s ease;
 }
 
-.navbar-brand {
-    letter-spacing: 1px;
-    transition: color 0.3s ease;
+
+
+.ms2 {
+    margin: 0;
+    display: inline-flex;
+    align-items: center;
+    margin-left: 0; /* sit immediately after `.navbar-brand` */
 }
 
 .navbar-brand:hover {
@@ -304,13 +308,14 @@ body {
     background-color: rgba(255, 255, 255, 0.1);
     border-color: white;
     transform: translateY(-2px);
+    color:#ffffff;
 }
 
 /* Section Headers */
 .divider {
     width: 60px;
     height: 3px;
-    background: linear-gradient(90deg, var(--accent-color), #00d4ff);
+    background: linear-gradient(90deg, var(--accent-color), #317b88);
     animation: expandDivider 1s ease-out;
 }
 
@@ -494,12 +499,12 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: linear-gradient(180deg, var(--accent-color), #00d4ff);
+    background: linear-gradient(180deg, #0056b3, rgba(176, 188, 207, 0.7));
     border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(180deg, var(--accent-hover), var(--accent-color));
+    background: linear-gradient(180deg, #00458f, rgba(133, 142, 156, 0.7));
 }
 
 
@@ -508,6 +513,10 @@ body {
 @media (max-width: 768px) {
     .hero-name {
         font-size: 2.5rem;
+    }
+    .navbar-brand {
+        transform: none;
+        margin-left: 0;
     }
     
     .hero-cta {
