@@ -6,6 +6,14 @@
     font-style: normal;
     font-display: swap;
 }
+
+@font-face {
+    font-family: 'RX100'; src: url('fonts/RX100-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Rajdhani'; src: url('fonts/Rajdhani-Regular.ttf') format('truetype');
+}
 @font-face {
     font-family: 'bbtorsospro';
     src: url('fonts/bbtorsospro-thin.otf') format('opentype');
@@ -263,15 +271,53 @@ body {
 
 .parallax-bg {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 120%;
-    background: 
-        radial-gradient(circle at 20% 50%, rgba(0, 123, 255, 0.15) 0%, transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(0, 212, 255, 0.1) 0%, transparent 50%);
-    z-index: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #050505; /* Fond presque noir */
+
+  /* C'est ici que la magie opère. On empile plusieurs couches : */
+  background-image: 
+    /* 1. La Vignette (Ombre sur les bords pour l'effet cinéma) */
+    radial-gradient(circle at center, transparent 30%, #000 90%),
+    /* 2. GRILLE PRINCIPALE (Cyan - Grande) - Lignes Verticales & Horizontales */
+      linear-gradient(rgba(3, 233, 244, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(3, 233, 244, 0.1) 1px, transparent 1px),
+    /* 3. GRILLE SECONDAIRE (Magenta - Petite) - Lignes Verticales & Horizontales */
+      linear-gradient(rgba(217, 3, 244, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(217, 3, 244, 0.05) 1px, transparent 1px);
+
+  /* On définit la taille des grilles */
+  background-size:
+    100% 100%,
+    /* Vignette */ 60px 60px,
+    /* Grande grille Cyan (60px) */ 60px 60px,
+    20px 20px,
+    /* Petite grille Magenta (20px) */ 20px 20px;
+
+  /* On lance l'animation */
+  animation: cyber-move 10s linear infinite;
 }
+
+/* L'animation qui fait bouger les grilles */
+@keyframes cyber-move {
+  0% {
+    background-position:
+      0 0,
+      /* Vignette (ne bouge pas) */ 0 0,
+      0 0,
+      /* Grille Cyan (Départ) */ 0 0,
+      0 0; /* Grille Magenta (Départ) */
+  }
+  100% {
+    background-position:
+      0 0,
+      /* Vignette */ 60px 60px,
+      60px 60px,
+      /* Grille Cyan bouge de 60px (1 carreau) */ 40px 40px,
+      40px 40px; /* Grille Magenta bouge de 40px (plus vite/décalé) */
+  }
+}
+
 
 .hero-section .container {
     position: relative;
@@ -287,6 +333,9 @@ body {
     flex-wrap: wrap;
 }
 
+.btntest:hover:before {
+  transform: translateX(15em);
+}
 .pulse-btn {
     animation: pulse 2s infinite;
 }
@@ -299,7 +348,13 @@ body {
         box-shadow: 0 0 0 15px rgba(0, 123, 255, 0);
     }
 }
+.btn-pulse:hover {
+    animation: pulse 3s infinite;
+}
 
+.btn-pulse {
+    background-color: none;
+}
 .btn-outline-light {
     border: 2px solid rgba(255, 255, 255, 0.5);
     transition: all 0.3s ease;
@@ -434,7 +489,9 @@ body {
     box-shadow: 0 5px 15px rgba(0, 123, 255, 0.4);
     transition: 0.3s;
 }
-
+.skill-badge:not(:hover) {
+    transition: 0.3s;
+}
 /* Social Icons */
 .social-icon {
     width: 45px;
@@ -449,7 +506,18 @@ body {
     transition: all 0.3s ease;
     font-size: 1.1rem;
 }
+.list-inline-item:hover {
+    transform: translateY(-3px);
+    color: var(--accent-color);
+    text-shadow: 0 5px 15px rgba(0, 123, 255, 0.4);
+    transition: 1s;
+    cursor: default;
+}
 
+.list-inline-item:not(:hover) {
+    transition: 1s;
+
+}
 .social-icon:hover {
     background-color: var(--accent-color);
     color: white;
@@ -464,7 +532,7 @@ body {
     right: 30px;
     width: 50px;
     height: 50px;
-    background: linear-gradient(135deg, var(--accent-color), #00d4ff);
+    background: black;
     color: white;
     border: none;
     border-radius: 50%;
@@ -477,7 +545,7 @@ body {
     align-items: center;
     justify-content: center;
     font-size: 1.2rem;
-    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+
 }
 
 .back-to-top.visible {
@@ -537,9 +605,20 @@ body {
 }
 .text-hero {
     margin-bottom: 0;
-    font-weight: 300;
+    font-weight: 100;
     color:	#e1e1e1;
-    font-family: Inter, sans-serif;
+    font-family: bbftorsospro-light, sans-serif;
+}
+
+.text-hero:hover {
+    color: white;
+    transition: 1s;
+    text-shadow: 0 0 10px var(--accent-color), 0 0 20px var(--accent-color), 0 0 30px var(--accent-color);
+    
+}
+.text-hero:not(:hover) {
+    text-shadow: none;
+    transition: 1s;
 }
 
 .btn::before {
@@ -559,11 +638,25 @@ body {
     width: 300px;
     height: 300px;
 }
-
+@keyframes fade-out {
+  100% {
+    opacity: 0;
+    display: none;
+}
+}
+.SelectedWorks-Text {
+    font-family: 'Rajdhani', sans-serif;
+    color: #ffffff;
+    font-size: 2.5rem;  /* must match the font-face weight */
+    font-weight: 600;
+    letter-spacing: -2px;
+    font-size: 75px;
+}
 .btn-primary:hover {
-    background-color: var(--accent-hover);
+    background-color: none;
     transform: translateY(-3px);
     box-shadow: 0 10px 25px rgba(0, 123, 255, 0.4);
+    border: none;
 }
 
 /* Section Transitions */

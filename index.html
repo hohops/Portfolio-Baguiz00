@@ -68,7 +68,7 @@
                 Crafting immersive worlds and hyper-realistic assets for the next generation of gaming.
             </p>
             <div class="hero-cta d-flex gap-3 justify-content-start">
-                <a href="#portfolio" class="btn btn-primary btn-lg px-5 rounded-pill pulse-btn">View Work</a>
+                <a href="#portfolio" class="btn btn-primary btn-lg px-5 rounded-pill viework btn-pulse">View Work</a>
                 <a href="#contact" class="btn btn-outline-light btn-lg px-5 rounded-pill">Hire Me</a>
             </div>
         </div>
@@ -78,7 +78,7 @@
     <section id="portfolio" class="py-6">
         <div class="container">
             <div class="section-header text-center mb-5" data-aos="fade-up">
-                <h3 class="text-uppercase letter-spacing-2">Selected Works</h3>
+                <h3 class="text-uppercase letter-spacing-2 SelectedWorks-Text">Selected Works</h3>
                 <div class="divider mx-auto mt-3"></div>
             </div>
 
@@ -88,10 +88,10 @@
                 <div class="col-md-6 col-lg-4" data-aos="zoom-in-up" data-aos-delay="100">
                     <article class="card project-card h-100 border-0 bg-darker">
                         <div class="card-img-wrapper overflow-hidden position-relative">
-                            <img src="https://i.ibb.co/RpCydjyG/Captura-de-ecra-2025-05-02-181954.png"
+                            <img src="https://i.ibb.co/9k7SFq2h/Photoshop-Extension-Image.png"
                                 class="card-img-top" alt="3D Scene Render">
                             <div class="card-overlay">
-                                <a href="https://i.ibb.co/RpCydjyG/Captura-de-ecra-2025-05-02-181954.png"
+                                <a href="https://i.ibb.co/9k7SFq2h/Photoshop-Extension-Image.png"
                                     class="view-btn image-zoom" data-title="3D Scene Composition"><i
                                         class="fas fa-search-plus"></i></a>
                             </div>
@@ -159,10 +159,10 @@
                 <div class="col-md-6 col-lg-4" data-aos="zoom-in-up" data-aos-delay="200">
                     <article class="card project-card h-100 border-0 bg-darker">
                         <div class="card-img-wrapper overflow-hidden position-relative">
-                            <img src="https://i.ibb.co/XfJ15SMf/IMG-20260208-WA0011.webp" class="card-img-top"
+                            <img src="https://i.ibb.co/NnyvD4Sn/Photoshop-Extension-Image-1.png" class="card-img-top"
                                 alt="Human Character Model">
                             <div class="card-overlay">
-                                <a href="https://i.ibb.co/XfJ15SMf/IMG-20260208-WA0011.webp" class="view-btn image-zoom"
+                                <a href="https://i.ibb.co/NnyvD4Sn/Photoshop-Extension-Image-1.png" class="view-btn image-zoom"
                                     data-title="Dark terror corridor"><i class="fas fa-search-plus"></i></a>
                             </div>
                         </div>
@@ -204,7 +204,7 @@
                         <h5 class="text-white mb-3">Software Proficiency</h5>
                         <div class="d-flex flex-wrap justify-content-center gap-2">
                             <span class="badge bg-dark border border-secondary fw-normal p-2 skill-badge"
-                                data-aos="fade-up" data-aos-delay="100">Blender</span>
+                                data-aos="fade-up" data-aos-delay="100" id="blenderBadge">Blender</span>
                         </div>
                     </div>
                 </div>
@@ -233,7 +233,7 @@
                     </div>
 
                     <div class="mt-5">
-                        <h3 class="mb-8">Discord:</h3>
+                        <h3 class="mb-8" id="discord-section">Discord:</h3>
                         <span class="text-secondary fs-5">baguiz00</span>
                     </div>
                 </div>
@@ -294,6 +294,17 @@
             const progress = (scrollTop / scrollHeight) * 100;
             document.getElementById('scrollProgress').style.width = progress + '%';
         });
+
+        let blender = 'https://www.blender.org/';
+        let test = document.getElementById('blenderBadge');
+        test.addEventListener('click', function () {
+        window.open(blender,'_blank');
+        window.open(blender);
+            
+        });
+
+
+
 
         // Back to Top Button
         const backToTopBtn = document.getElementById('backToTop');
