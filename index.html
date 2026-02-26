@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BAGUIZ00 | 3D Artist</title>
@@ -167,8 +167,27 @@
                             </div>
                         </div>
                         <div class="card-body p-4">
-                            <h5 class="card-title text-white">Dark terror corridor</h5>
+                            <h5 class="card-title text-white">Backrooms </h5>
                             <p class="card-text text-secondary small">An suspense scene of an corridor</p>
+                        </div>
+                    </article>
+                </div>
+
+                                <div class="col-md-6 col-lg-4" data-aos="zoom-in-up" data-aos-delay="200">
+                    <article class="card project-card h-100 border-0 bg-darker">
+                        <div class="card-img-wrapper overflow-hidden position-relative">
+                            <video autoplay loop muted class="card-img-top">
+                                <source src="videos/VID-20260208-WA0008.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <div class="card-overlay">
+                                <a href="videos/VID-20260208-WA0008.mp4" class="view-btn image-zoom"
+                                    data-title="Inside Our veins"><i class="fas fa-search-plus"></i></a>
+                            </div>
+                        </div>
+                        <div class="card-body p-4">
+                            <h5 class="card-title text-white">Inside Our veins</h5>
+                            <p class="card-text text-secondary small">an new look inside of our veins</p>
                         </div>
                     </article>
                 </div>
@@ -380,10 +399,25 @@
             lightbox.style.display = 'none';
             document.body.style.overflow = 'auto';
         }
+
+        // Optional: enable left or full-right placement for the robot 3D viewer.
+        // Usage: add `?robot=left` or `?robot=right` to the page URL,
+        // or add class `left` / `full-right` to the <spline-viewer> element.
+        (function ensureRobotAlwaysRight() {
+            try {
+                const robotEl = document.querySelector('.robot-3d');
+                if (!robotEl) return;
+                // Always enforce right placement when the element exists.
+                robotEl.classList.remove('left');
+                robotEl.classList.add('full-right');
+            } catch (e) {
+                // silently fail on older browsers
+            }
+        })();
     </script>
 </body>
 <script type="module" src="https://unpkg.com/@splinetool/viewer@1.12.51/build/spline-viewer.js"></script>
 
 
 
-</html>c
+</html>
