@@ -34,6 +34,9 @@
         <div class="loader"></div>
     </div>
 
+    <!-- Scroll Progress Bar -->
+    <div id="scrollProgress" class="scroll-progress-bar"></div>
+
     <!-- Navigation -->
     <nav id="mainNav" class="navbar navbar-expand-lg navbar-dark fixed-top glass-nav">
         <div class="container">
@@ -275,10 +278,11 @@
         <i class="fas fa-arrow-up"></i>
     </button>
 
-    <!-- Image Lightbox Modal -->
+    <!-- Image/Video Lightbox Modal -->
     <div id="imageLightbox" class="lightbox">
         <span class="lightbox-close">&times;</span>
-        <img class="lightbox-content" id="lightboxImage">
+        <img class="lightbox-content" id="lightboxImage" style="display: none;">
+        <video class="lightbox-content" id="lightboxVideo" style="display: none;" controls autoplay></video>
         <div class="lightbox-caption" id="lightboxCaption"></div>
     </div>
 
@@ -363,6 +367,7 @@
         // Image Lightbox
         const lightbox = document.getElementById('imageLightbox');
         const lightboxImg = document.getElementById('lightboxImage');
+        const lightboxVideo = document.getElementById('lightboxVideo');
         const lightboxCaption = document.getElementById('lightboxCaption');
         const lightboxClose = document.querySelector('.lightbox-close');
 
@@ -370,11 +375,24 @@
         document.querySelectorAll('.image-zoom').forEach(link => {
             link.addEventListener('click', function (e) {
                 e.preventDefault();
-                const imgSrc = this.getAttribute('href');
+                const href = this.getAttribute('href');
                 const title = this.getAttribute('data-title');
+                const isVideo = href.endsWith('.mp4') || href.endsWith('.webm') || href.endsWith('.avi');
 
-                lightboxImg.src = imgSrc;
                 lightboxCaption.textContent = title;
+
+                if (isVideo) {
+                    // Show video, hide image
+                    lightboxImg.style.display = 'none';
+                    lightboxVideo.style.display = 'block';
+                    lightboxVideo.src = href;
+                } else {
+                    // Show image, hide video
+                    lightboxVideo.style.display = 'none';
+                    lightboxImg.style.display = 'block';
+                    lightboxImg.src = href;
+                }
+
                 lightbox.style.display = 'flex';
                 document.body.style.overflow = 'hidden';
             });
